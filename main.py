@@ -6,8 +6,8 @@ import time
 import cv2
 import os
 import glob
-#python main.py --input 'https://cctvtraffic.tycg.gov.tw/camera040/?action=strea' --output output/highway.avi --yolo yolo-coco
- #--output output/highway.avi 
+#python main.py --output output/highway.avi --yolo yolo-coco
+ #--output output/highway.avi  --input 'https://cctvtraffic.tycg.gov.tw/camera040/?action=strea'
 
 files = glob.glob('output/*.png')
 for f in files:
@@ -23,8 +23,6 @@ counter = 0
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--input", required=True,
-	help="path to input video")
 ap.add_argument("-o", "--output", required=True,
 	help="path to output video")
 ap.add_argument("-y", "--yolo", required=True,
